@@ -1,6 +1,6 @@
 #include "CPlato.h"
-
+#include "CMenu.h"
 int main() {
-  CPlato prueba = new CPlato("Ensalada", 254, 23);
-  prueba->mostrarPlato();
+  CMenu* prueba = new CMenu("ficheroPrueba");
+  prueba->mostrarPlatosDisponibles();
 }

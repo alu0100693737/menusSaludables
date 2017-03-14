@@ -25,5 +25,5 @@ int CPlato::getPuntuacion() {
 }
 
 void CPlato::mostrarPlato() {
-  cout << "Plato: " << getNombrePlato() << " con Valor Nutricional: " << getValorNutricional() << " y " << getPuntuacion() << " contenido en nutrientes." << endl;
+  cout << "Plato: " << getNombrePlato() << "\t\tValor nutricional: " << getValorNutricional() << "\t\tContenido en nutrientes " << getPuntuacion() << endl;
 }

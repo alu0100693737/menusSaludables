@@ -10,6 +10,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include "CPlato.h"
 
 using namespace std;
 
@@ -23,6 +24,9 @@ class CMenu {
     CMenu(string nombreFichero); //fichero con los tipos de plato disponibles en formato nombre, valor nutricional y puntuacion
     ~CMenu();
     
-    vector<CPlato> getPlatosDisponibles(); 
+    int getUmbralMaximo();
+    int getNumPlatosDisponibles();
+    vector<CPlato>& getPlatosDisponibles(); 
+    void mostrarPlatosDisponibles();
 };
 #endif
