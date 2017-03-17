@@ -1,7 +1,8 @@
 #include "CPlato.h"
 #include "CMenu.h"
+#include "problemaMenusSaludables.h"
 
 int main() {
-  CMenu* prueba = new CMenu("ficheroPrueba");
-  prueba->mostrarPlatosDisponibles();
+  problemaMenusSaludables* prueba = new problemaMenusSaludables("ficheroPrueba");
+  
 }

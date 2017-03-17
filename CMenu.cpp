@@ -18,7 +18,7 @@ void CMenu::leerFichero(string nombreFichero) {
 	ficheroEntrada >> numPlatosDisponibles;
 	ficheroEntrada >> umbralMaximo;
 	
-	cout << "Num platos: " << numPlatosDisponibles << " Umbral: " << umbralMaximo << endl;
+	cout << "Num platos: " << getNumPlatosDisponibles() << " Umbral: " << getUmbralMaximo() << endl;
 	//Se permiten platos con mas de una palabra: ej: carne fiesta
 	vector<string> palabras; //palabras de la linea
 	string linea;
@@ -55,13 +55,14 @@ void CMenu::leerFichero(string nombreFichero) {
         ficheroEntrada.close();
     }
     else cout << "Fichero inexistente o faltan permisos para abrirlo" << endl;  
+    mostrarPlatosDisponibles();
 }
 
-int CMenu::getUmbralMaximo() {
+int& CMenu::getUmbralMaximo() {
   return umbralMaximo;
 }
 
-int CMenu::getNumPlatosDisponibles() {
+int& CMenu::getNumPlatosDisponibles() {
   return numPlatosDisponibles;
 }
 

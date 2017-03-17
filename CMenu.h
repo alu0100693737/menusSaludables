@@ -24,8 +24,8 @@ class CMenu {
     CMenu(string nombreFichero); //fichero con los tipos de plato disponibles en formato nombre, valor nutricional y puntuacion
     ~CMenu();
     
-    int getUmbralMaximo();
-    int getNumPlatosDisponibles();
+    int& getUmbralMaximo();
+    int& getNumPlatosDisponibles();
     vector<CPlato>& getPlatosDisponibles(); 
     void mostrarPlatosDisponibles();
 };
