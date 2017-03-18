@@ -4,5 +4,6 @@
 
 int main() {
   problemaMenusSaludables* prueba = new problemaMenusSaludables("ficheroPrueba");
+  prueba->mostrarMatriz();
   
 }
