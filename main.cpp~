@@ -3,6 +3,7 @@
 #include "problemaMenusSaludables.h"
 
 int main() {
-  problemaMenusSaludables* prueba = new CMenu("ficheroPrueba");
+  problemaMenusSaludables* prueba = new problemaMenusSaludables("ficheroPrueba");
+  prueba->mostrarMatriz();
   
 }
