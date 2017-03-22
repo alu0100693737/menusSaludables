@@ -13,18 +13,17 @@ class problemaMenusSaludables {
     CMenu* menu;
     int v1, v2; //estrategia recursiva
     int** matriz;//estrategia top down
-    int maximoRecursivo;
+
     
     int getDatoMatriz(int i, int j);
-    void setDatoMatriz(int i, int j, int dato); //pos i j y dato
+    void setDatoMatriz(int i, int j, int dato); //pos i j y dato*/
     
   public:
     problemaMenusSaludables(string nombreFichero);
     CMenu* getMenu();
-    
-    void solucionRecursiva(int, int);
+
     int resolverRecursivo(int, int); // O(n²) //parametros: numero de platos disponible y umbral maximo
-    int getMaximoRecursivo();
+ 
     //resolver TopDown
     int resolverTopDown(int nPlatos, int umbralMaximo);//estrategia top down
     void mostrarMatriz();

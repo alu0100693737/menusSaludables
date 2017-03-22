@@ -20,6 +20,7 @@ inline int max(int a, int b){
 }
  
 int RecursiveKnapsack(int i, int w){
+  printf("platos: %d umbral %d\n", i, w);
   if(i == 0 || w == 0)
         return 0;
  

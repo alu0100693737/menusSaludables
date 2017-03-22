@@ -4,6 +4,8 @@
 #include <sstream>
 
 CMenu::CMenu(string nombreFichero) {
+   CPlato aux("Plato Vacio", 0, 0);
+  getPlatosDisponibles().push_back(aux);
   leerFichero(nombreFichero);
 }
 
@@ -72,7 +74,7 @@ vector<CPlato>& CMenu::getPlatosDisponibles() {
 
 void CMenu::mostrarPlatosDisponibles() {
   cout << "\n\t\t\tPLATOS DISPONIBLES\n\n";
-  for(int i = 0; i< getPlatosDisponibles().size(); i++) {
+  for(int i = 1; i< getPlatosDisponibles().size(); i++) {
     getPlatosDisponibles().at(i).mostrarPlato();
   }
 }
