@@ -11,7 +11,6 @@
 class problemaMenusSaludables {
   private:
     CMenu* menu;
-    int v1, v2; //estrategia recursiva
     int** matriz;//estrategia top down
 
     
