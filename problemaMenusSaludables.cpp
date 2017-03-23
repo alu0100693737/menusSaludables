@@ -17,6 +17,7 @@ problemaMenusSaludables::problemaMenusSaludables(string nombreFichero) {
   cout << "Recursivo: " << resolverRecursivo(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo()) << endl;
   cout << "Recursivo Top Down" << resolverTopDown(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo()) << endl;
   mostrarMatriz();
+  reconstruccionSolucion(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo());
   cout << "\n\n\tRecursivo Bottom Up" << endl;
   resolverBottomUp(getMenu()->getNumPlatosDisponibles() - 1, getMenu()->getUmbralMaximo());
   mostrarMatriz();
@@ -77,6 +78,17 @@ void problemaMenusSaludables::resolverBottomUp(int nPlatos, int umbralMaximo){
             }
 }
 
+void problemaMenusSaludables::reconstruccionSolucion(int nPlatos, int umbralMaximo) {
+  cout << "HOLA que hace" << endl;
+    int j = umbralMaximo;
+    for(int i = nPlatos - 1; i > 1; --i)
+      if((getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion() <= j) && 
+	(getDatoMatriz(i - 1, j - getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion()) + getMenu()->getPlatosDisponibles().at(i - 1).getValorNutricional() == getDatoMatriz(i, j) )) {
+	  cout << "El objeto " << i << " ha sido elegido con valor " << getMenu()->getPlatosDisponibles().at(i).getValorNutricional() << endl;
+	  j = j - getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion();
+	  cout << " j vale: " << j << endl;
+	}
+}
 void problemaMenusSaludables::mostrarMatriz() {
     for(int i = 0; i <= getMenu()->getNumPlatosDisponibles(); i++) {
         cout << endl;

@@ -28,4 +28,6 @@ class problemaMenusSaludables {
     void mostrarMatriz();
     
     void resolverBottomUp(int nPlatos, int umbralMaximo);//estrategia bottom up
+    
+    void reconstruccionSolucion(int nPlatos, int umbralMaximo);
 };
