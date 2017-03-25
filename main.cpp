@@ -1,9 +1,17 @@
+///////////////////////////////////////////////////////////////
+//            main.cpp      Programa Principal               //
+//                                                           //
+//      Autor:   Iván García Campos                          //
+//                                                           //
+//               Fecha: 25/03/2017                           //
+///////////////////////////////////////////////////////////////
+
 #include "CPlato.h"
 #include "CMenu.h"
-#include "problemaMenusSaludables.h"
+#include "CProblemaMenusSaludables.h"
 
 int main() {
-  problemaMenusSaludables* prueba = new problemaMenusSaludables("ficheroPrueba");
-  prueba->mostrarMatriz();
-  
+    CProblemaMenusSaludables* prueba = new CProblemaMenusSaludables("ficheroPrueba");
+    //prueba->mostrarMatriz();
+
 }
