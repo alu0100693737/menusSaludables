@@ -10,9 +10,15 @@
 #include "CMenu.h"
 #include "CProblemaMenusSaludables.h"
 
-int main() {
-    CProblemaMenusSaludables* prueba = new CProblemaMenusSaludables("ficheroPrueba");
-    prueba->ejecutar();
-    //prueba->mostrarMatriz();
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        cout << argc << endl;
+        cout << "Error ejecutando el programa \n";
+        cerr << "Recuerde que debe ejecutar la aplicación incluyendo el fichero de entrada. \n\n";
+        return -1;
+    } else {
+        CProblemaMenusSaludables* prueba = new CProblemaMenusSaludables(argv[1]);
+        prueba->ejecutar();
+    }
 
 }

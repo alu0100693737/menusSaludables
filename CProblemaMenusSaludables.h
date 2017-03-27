@@ -1,3 +1,6 @@
+#ifndef _CPROBLEMAMENUSSALUDABLES_H
+#define _CPROBLEMAMENUSSALUDABLES_H
+
 #include "CMenu.h"
 #include <algorithm>    // std::max
 #include <iostream>
@@ -81,3 +84,4 @@ public:
          */
     void ejecutar();
 };
+#endif
