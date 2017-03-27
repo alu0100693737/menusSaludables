@@ -89,7 +89,7 @@ void CProblemaMenusSaludables::reconstruccionSolucion(int nPlatos, int umbralMax
     for(int i = nPlatos; i >= 1; --i) {
         if((getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion() <= j) &&
                 (getDatoMatriz(i - 1, j - getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion()) + getMenu()->getPlatosDisponibles().at(i - 1).getValorNutricional() == getDatoMatriz(i, j) )) {
-            cout << "\n\tEl objeto " << i << " ha sido elegido con valor " << getMenu()->getPlatosDisponibles().at(i - 1).getValorNutricional() << endl;
+            cout << "\n\tEl plato: " << getMenu()->getPlatosDisponibles().at(i - 1).getNombrePlato() << " ha sido elegido con valor nutricional: " << getMenu()->getPlatosDisponibles().at(i - 1).getValorNutricional() << endl;
             j = j - getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion();
         }
     }
