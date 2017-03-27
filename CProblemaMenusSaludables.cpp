@@ -8,6 +8,7 @@
 ///////////////////////////////////////////////////////////////
 
 #include "CProblemaMenusSaludables.h"
+#include <time.h>
 #define INF 99999
 #define N 128
 
@@ -114,15 +115,43 @@ void CProblemaMenusSaludables::ejecutar() {
     cout << "\t PROBLEMA MENUS SALUDABLES\n\n" << endl;
 
     cout << "\tPuntuacion: " << getMenu()->getUmbralMaximo() << " \t Num de platos: " << getMenu()->getNumPlatosDisponibles() << endl;
+    
+    timespec t1;
+    clock_gettime(CLOCK_REALTIME,&t1);
+    
     cout << "\n\t*Recursivo: " << resolverRecursivo(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo()) << endl;
+    
+    timespec b1;
+    clock_gettime(CLOCK_REALTIME,&b1);
+    cout << "El tiempo en ejecutarse fue de ";
+    cout << b1.tv_nsec - t1.tv_nsec << endl << endl; 
+    
+    
     cout << "-----------------------------------------------------------------------------------" << endl;
+    
+    timespec t2;
+    clock_gettime(CLOCK_REALTIME,&t2);
     cout << "\n\t*Recursivo Top Down: " << resolverTopDown(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo()) << endl;
+    timespec b2;
+    clock_gettime(CLOCK_REALTIME,&b2);
+    cout << "El tiempo en ejecutarse fue de ";
+    cout << b2.tv_nsec - t2.tv_nsec << endl << endl;
+    
     mostrarMatriz();
     reconstruccionSolucion(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo());
+    
     cout << "-----------------------------------------------------------------------------------" << endl;
     cout << "\n\n\tRecursivo Bottom Up" << endl;
+    
+    timespec t3;
+    clock_gettime(CLOCK_REALTIME,&t3);
     resolverBottomUp(getMenu()->getNumPlatosDisponibles() - 1, getMenu()->getUmbralMaximo());
+    timespec b3;
+    clock_gettime(CLOCK_REALTIME,&b3);
+    cout << "El tiempo en ejecutarse fue de ";
+    cout << b3.tv_nsec - t3.tv_nsec << endl << endl;
+    
     mostrarMatriz();
-    reconstruccionSolucion(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo());
+   reconstruccionSolucion(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo());
     
 }
