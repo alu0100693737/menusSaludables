@@ -31,5 +31,5 @@ int CPlato::getPuntuacion() {
 }
 
 void CPlato::mostrarPlato() {
-    cout << "Plato: " << getNombrePlato() << " \nValor Nutricional: " << getValorNutricional() << " \nContenido en nutrientes: " << getPuntuacion() << endl << endl;
+    cout << "\t*Plato: " << getNombrePlato() << " \n\t*Valor Nutricional: " << getValorNutricional() << " \n\t*Contenido en nutrientes: " << getPuntuacion() << endl << endl;
 }

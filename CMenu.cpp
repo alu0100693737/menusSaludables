@@ -85,4 +85,5 @@ void CMenu::mostrarPlatosDisponibles() {
     for(int i = 0; i < getPlatosDisponibles().size(); i++) {
         getPlatosDisponibles().at(i).mostrarPlato();
     }
+    cout << "-----------------------------------------------------------------------------------" << endl;
 }

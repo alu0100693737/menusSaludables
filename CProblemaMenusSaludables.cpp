@@ -21,16 +21,6 @@ CProblemaMenusSaludables::CProblemaMenusSaludables(string nombreFichero) {
     for(int i = 0; i <= getMenu()->getNumPlatosDisponibles(); i++)
         for(int j = 0; j <= getMenu()->getUmbralMaximo(); j++)
             matriz[i][j] = -1;
-
-    cout << "Puntuacion: " << getMenu()->getUmbralMaximo() << " \t Num de platos: " << getMenu()->getNumPlatosDisponibles() << endl;
-    cout << "Recursivo: " << resolverRecursivo(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo()) << endl;
-    cout << "Recursivo Top Down" << resolverTopDown(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo()) << endl;
-    mostrarMatriz();
-    reconstruccionSolucion(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo());
-    cout << "\n\n\tRecursivo Bottom Up" << endl;
-    resolverBottomUp(getMenu()->getNumPlatosDisponibles() - 1, getMenu()->getUmbralMaximo());
-    mostrarMatriz();
-    reconstruccionSolucion(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo());
 }
 
 CMenu* CProblemaMenusSaludables::getMenu() {
@@ -98,14 +88,14 @@ void CProblemaMenusSaludables::reconstruccionSolucion(int nPlatos, int umbralMax
     for(int i = nPlatos; i >= 1; --i) {
         if((getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion() <= j) &&
                 (getDatoMatriz(i - 1, j - getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion()) + getMenu()->getPlatosDisponibles().at(i - 1).getValorNutricional() == getDatoMatriz(i, j) )) {
-            cout << "El objeto " << i << " ha sido elegido con valor " << getMenu()->getPlatosDisponibles().at(i - 1).getValorNutricional() << endl;
+            cout << "\n\tEl objeto " << i << " ha sido elegido con valor " << getMenu()->getPlatosDisponibles().at(i - 1).getValorNutricional() << endl;
             j = j - getMenu()->getPlatosDisponibles().at(i - 1).getPuntuacion();
         }
     }
 }
 void CProblemaMenusSaludables::mostrarMatriz() {
     for(int i = 0; i <= getMenu()->getNumPlatosDisponibles(); i++) {
-        cout << endl;
+        cout << "\n\t";
         for(int j = 0; j <= getMenu()->getUmbralMaximo(); j++)
             cout << matriz[i][j] << " ";
     }
@@ -118,4 +108,21 @@ int CProblemaMenusSaludables::getDatoMatriz(int i, int j) {
 
 void CProblemaMenusSaludables::setDatoMatriz(int i, int j, int dato) {
     matriz[i][j] = dato;
+}
+
+void CProblemaMenusSaludables::ejecutar() {
+    cout << "\t PROBLEMA MENUS SALUDABLES\n\n" << endl;
+
+    cout << "\tPuntuacion: " << getMenu()->getUmbralMaximo() << " \t Num de platos: " << getMenu()->getNumPlatosDisponibles() << endl;
+    cout << "\n\t*Recursivo: " << resolverRecursivo(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo()) << endl;
+    cout << "-----------------------------------------------------------------------------------" << endl;
+    cout << "\n\t*Recursivo Top Down: " << resolverTopDown(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo()) << endl;
+    mostrarMatriz();
+    reconstruccionSolucion(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo());
+    cout << "-----------------------------------------------------------------------------------" << endl;
+    cout << "\n\n\tRecursivo Bottom Up" << endl;
+    resolverBottomUp(getMenu()->getNumPlatosDisponibles() - 1, getMenu()->getUmbralMaximo());
+    mostrarMatriz();
+    reconstruccionSolucion(getMenu()->getNumPlatosDisponibles(), getMenu()->getUmbralMaximo());
+    
 }

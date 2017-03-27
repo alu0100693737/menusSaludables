@@ -12,6 +12,7 @@
 
 int main() {
     CProblemaMenusSaludables* prueba = new CProblemaMenusSaludables("ficheroPrueba");
+    prueba->ejecutar();
     //prueba->mostrarMatriz();
 
 }

@@ -75,4 +75,9 @@ public:
          * @brief Metodo para mostrar la matriz
          */
     void mostrarMatriz();
+    
+    /**
+         * @brief Metodo que muestra la solucion recursiva, top down y bottom up para el problema de menus saludables
+         */
+    void ejecutar();
 };
